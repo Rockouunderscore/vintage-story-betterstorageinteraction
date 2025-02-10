@@ -1,17 +1,19 @@
-﻿using System.Reflection;
-using betterstorageinteraction.Patches.InventoryManager;
+﻿
+using System.Reflection;
 using HarmonyLib;
 using Vintagestory.API.Client;
 using Vintagestory.API.Server;
 using Vintagestory.API.Common;
 using Vintagestory.Common;
 using Vintagestory.GameContent;
+using betterstorageinteractions.Patches.Crate;
+using betterstorageinteractions.Patches.InventoryManager;
 
-namespace betterstorageinteraction;
+namespace betterstorageinteractions;
 
-public class BetterStorageInteractionModSystem : ModSystem
+public class BetterStorageInteractionsModSystem : ModSystem
 {
-    public const string ModID = "betterstorageinteraction";
+    public const string ModID = "betterstorageinteractions";
     private const string ConfigFileName = ModID + "/config.json";
     
     private Harmony harmony;
@@ -54,17 +56,17 @@ public class BetterStorageInteractionModSystem : ModSystem
     
     public override void Start(ICoreAPI api)
     {
-        api.Logger.Notification($"{nameof(BetterStorageInteractionModSystem)}.{nameof(Start)} {api.Side} {ModID}");
+        api.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(Start)} {api.Side} {ModID}");
     }
 
     public override void StartServerSide(ICoreServerAPI api)
     {
-        api.Logger.Notification($"{nameof(BetterStorageInteractionModSystem)}.{nameof(StartServerSide)} {ModID}");
+        api.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(StartServerSide)} {ModID}");
     }
 
     public override void StartClientSide(ICoreClientAPI api)
     {
-        api.Logger.Notification($"{nameof(BetterStorageInteractionModSystem)}.{nameof(StartClientSide)} {ModID}");
+        api.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(StartClientSide)} {ModID}");
         
         Init(api);
     }

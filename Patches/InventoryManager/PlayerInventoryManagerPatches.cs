@@ -1,7 +1,7 @@
 using Vintagestory.API.Common;
 using Vintagestory.Common;
 
-namespace betterstorageinteraction.Patches.InventoryManager;
+namespace betterstorageinteractions.Patches.InventoryManager;
 
 public class PlayerInventoryManagerPatches
 {

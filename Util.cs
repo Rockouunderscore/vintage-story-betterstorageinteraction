@@ -1,9 +1,9 @@
+
 using System.Collections.Generic;
 using Vintagestory.API.Common;
-using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 
-namespace betterstorageinteraction;
+namespace betterstorageinteractions;
 
 public static class Util
 {

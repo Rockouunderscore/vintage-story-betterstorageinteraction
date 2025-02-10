@@ -5,7 +5,7 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.GameContent;
 
-namespace betterstorageinteraction;
+namespace betterstorageinteractions.Patches.Crate;
 
 public class BlockEntityCratePatches
 {

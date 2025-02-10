@@ -1,4 +1,5 @@
-namespace betterstorageinteraction;
+
+namespace betterstorageinteractions;
 
 public class Config
 {

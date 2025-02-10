@@ -1,6 +1,7 @@
+
 using Vintagestory.API.Common;
 
-namespace betterstorageinteraction;
+namespace betterstorageinteractions;
 
 public class Global
 {
