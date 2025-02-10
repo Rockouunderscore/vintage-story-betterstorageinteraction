@@ -5,8 +5,8 @@
     "authors": [
         "Rockou_"
     ],
-    "description": "Push items to your hand and additional crate modifications, more coming",
-    "version": "1.0.3",
+    "description": "Push items to your hand by default and additional crate modifications, more coming soon(ish)",
+    "version": "1.0.4",
     "dependencies": {
         "game": ""
     }

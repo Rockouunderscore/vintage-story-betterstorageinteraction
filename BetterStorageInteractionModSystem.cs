@@ -43,7 +43,7 @@ public class BetterStorageInteractionModSystem : ModSystem
                 harmony.Patch(original, prefix: prefix);
             }
 
-            if (Global.Config.EnablePlayerInventoryManagerPatch)
+            if (Global.Config.EnablePlayerInventoryManagerPatch && Global.Config.FillHandFirst)
             {
                 MethodInfo original = typeof(PlayerInventoryManager).GetMethod(nameof(PlayerInventoryManager.TryGiveItemstack));
                 HarmonyMethod prefix = typeof(PlayerInventoryManagerPatches).GetMethod(nameof(PlayerInventoryManagerPatches.PlayerInventoryManager_TryGiveItemstack_Prefix));
