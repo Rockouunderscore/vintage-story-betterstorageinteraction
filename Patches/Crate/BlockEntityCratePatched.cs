@@ -262,7 +262,7 @@ public class BlockEntityCratePatched
 
     private int CrateTake(ItemSlot sinkSlot, int quantity = 0)
     {
-        Api.Logger.Debug($"{nameof(BlockEntityCratePatched)}.{nameof(CrateTake)}(int quantity {quantity})");
+        // Api.Logger.Debug($"{nameof(BlockEntityCratePatched)}.{nameof(CrateTake)}(int quantity {quantity})");
 
         if (inventory.Empty)
         {

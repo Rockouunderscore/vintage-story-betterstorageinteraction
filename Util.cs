@@ -49,49 +49,6 @@ public static class Util
         return 0;
     }
     
-    public static int TryTakeInto(this ItemSlot sinkSlot, ref ItemStack sourceStack, int amount = 0)
-    {
-
-        if (sourceStack == null)
-        {
-            return 0;
-        }
-
-        if (!(amount > 0) || amount > sourceStack.StackSize)
-        {
-            amount = sourceStack.StackSize;
-        }
-
-        if (!(amount > 0))
-        {
-            return 0;
-        }
-        
-
-        
-        int mergeableQuantity = sourceStack.Collectible.GetMergableQuantity(sinkSlot.Itemstack, sourceStack, EnumMergePriority.AutoMerge);
-        int quantity = GameMath.Min(mergeableQuantity, amount);
-        
-        if (quantity > 0)
-        {
-            if (sinkSlot.Itemstack == null)
-            {
-                sinkSlot.Itemstack = sourceStack.GetEmptyClone();
-            }
-            sinkSlot.Itemstack.StackSize += amount;
-            sourceStack.StackSize -= amount;
-
-            if (sourceStack.StackSize <= 0)
-            {
-                sourceStack = null;
-            }
-            
-            return amount;
-        }
-        
-        return 0;
-    }
-    
     public static IEnumerable<ItemSlot> GetPlayerItemSlots(IPlayer byPlayer)
     {
         
