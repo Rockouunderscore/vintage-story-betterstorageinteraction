@@ -25,7 +25,6 @@ public static class Util
         {
             return 0;
         }
-        
 
         if (sinkSlot.Itemstack == null)
         {
@@ -69,16 +68,16 @@ public static class Util
         }
         
 
-        if (sinkSlot.Itemstack == null)
-        {
-            sinkSlot.Itemstack = sourceStack.GetEmptyClone();
-        }
         
         int mergeableQuantity = sourceStack.Collectible.GetMergableQuantity(sinkSlot.Itemstack, sourceStack, EnumMergePriority.AutoMerge);
         int quantity = GameMath.Min(mergeableQuantity, amount);
         
         if (quantity > 0)
         {
+            if (sinkSlot.Itemstack == null)
+            {
+                sinkSlot.Itemstack = sourceStack.GetEmptyClone();
+            }
             sinkSlot.Itemstack.StackSize += amount;
             sourceStack.StackSize -= amount;
 

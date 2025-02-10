@@ -33,7 +33,7 @@ public class BetterStorageInteractionsModSystem : ModSystem
             }
         }
         
-        Harmony.DEBUG = true;
+        // Harmony.DEBUG = true;
         if (!Harmony.HasAnyPatches(ModID))
         {
             harmony = new Harmony(ModID);

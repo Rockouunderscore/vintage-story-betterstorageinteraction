@@ -10,9 +10,13 @@ public class PlayerInventoryManagerPatches
     {
         Global.Api.Logger.Debug("PlayerInventoryManager_TryGiveItemstack_Prefix");
 
+        ItemSlot dummySlot = new DummySlot(itemstack);
         ItemSlot handSlot = __instance.ActiveHotbarSlot;
-        handSlot?.TryTakeInto(ref itemstack);
-        handSlot?.MarkDirty();
+        if (handSlot != null && handSlot.CanHold(dummySlot))
+        {
+            dummySlot.TryPutInto(handSlot);
+            handSlot.MarkDirty();
+        }
         
         return true;
     }
