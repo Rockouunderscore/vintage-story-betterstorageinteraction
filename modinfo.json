@@ -1,0 +1,13 @@
+{
+    "type": "code",
+    "modid": "betterstorageinteraction",
+    "name": "Better storage interactions",
+    "authors": [
+        "Rockou_"
+    ],
+    "description": "Push items to your hand and additional crate modifications, more coming",
+    "version": "1.0.3",
+    "dependencies": {
+        "game": ""
+    }
+}
