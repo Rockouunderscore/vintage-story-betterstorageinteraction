@@ -1,4 +1,2 @@
-# vintage-story-betterstorageinteraction
-Vintage story mod source
-
-[Better storage interactions @ mods.vintagestory.at](https://mods.vintagestory.at/betterstorageinteractions)
+# [Better storage interactions @ mods.vintagestory.at](https://mods.vintagestory.at/betterstorageinteractions)
+Vintage story mod source for betterstorageinteractions
