@@ -9,6 +9,9 @@ public class Config
     public bool PatchShelf { get; set; } = true;
     public bool PatchItemPile { get; set; } = true;
     public bool PatchGroundStorage { get; set; } = true;
+    public bool PatchToolRack { get; set; } = true;
+    public bool PatchTorchHolder { get; set; } = true;
+    public bool PatchBlockBehaviorRightClickPickUp { get; set; } = true;
     
     public bool FillHandFirst { get; set; } = true;
     public bool FillHandFirstAllowOverflow { get; set; } = false;
