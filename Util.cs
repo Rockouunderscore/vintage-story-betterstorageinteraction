@@ -31,17 +31,33 @@ public static class Util
             ItemStack sourceStack = sourceSlot.TakeOut(quantity);
             int amountMoved = sourceStack.StackSize;
             sinkSlot.Itemstack = sourceStack;
-            
+
+            sinkSlot.MarkDirty();
+            sourceSlot.MarkDirty();
+
             return amountMoved;
         }
-        
+
+        if (sinkSlot.Itemstack.Class != sourceSlot.Itemstack.Class || sinkSlot.Itemstack.Id != sourceSlot.Itemstack.Id)
+        {
+            return 0;
+        }
+
+
+        // Global.Api.Logger.Debug($"sourceSlot.Itemstack.Collectible.Code {sourceSlot?.Itemstack?.Collectible?.Code}");
+        // Global.Api.Logger.Debug($"sinkSlot.Itemstack.Collectible.Code {sinkSlot?.Itemstack?.Collectible?.Code}");
+        // Global.Api.Logger.Debug($"sinkSlot.CanHold(sourceSlot) {sinkSlot.CanHold(sourceSlot)}");
         int mergeableQuantity = sourceSlot.Itemstack.Collectible.GetMergableQuantity(sinkSlot.Itemstack, sourceSlot.Itemstack, EnumMergePriority.AutoMerge);
+        // Global.Api.Logger.Debug($"mergeableQuantity {mergeableQuantity}");
         if (mergeableQuantity > 0)
         {
             int amount = GameMath.Min(mergeableQuantity, quantity);
             ItemStack sourceStack = sourceSlot.TakeOut(amount);
             int amountMoved = sourceStack.StackSize;
             sinkSlot.Itemstack.StackSize += sourceStack.StackSize;
+            
+            sinkSlot.MarkDirty();
+            sourceSlot.MarkDirty();
             
             return amountMoved;
         }
