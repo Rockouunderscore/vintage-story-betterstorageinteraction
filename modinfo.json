@@ -6,8 +6,10 @@
         "Rockou_"
     ],
     "description": "Push items to your hand by default and additional crate modifications",
-    "version": "1.2.2",
+    "version": "1.2.3",
+    "requiredOnServer": true,
+    "requiredOnClient": true,
     "dependencies": {
-        "game": ""
+        "game": "1.20.4"
     }
 }

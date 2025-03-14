@@ -7,6 +7,7 @@ using Vintagestory.API.Common;
 using Vintagestory.Common;
 using Vintagestory.GameContent;
 using betterstorageinteractions.Patches.InventoryManager;
+using Vintagestory.API.Server;
 
 namespace betterstorageinteractions;
 
@@ -90,21 +91,21 @@ public class BetterStorageInteractionsModSystem : ModSystem
         }
     }
     
-    // public override void Start(ICoreAPI api)
-    // {
-    //     api.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(Start)} {api.Side} {ModID}");
-    // }
+    public override void Start(ICoreAPI api)
+    {
+        Mod.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(Start)} {api.Side} {ModID}");
 
-    // public override void StartServerSide(ICoreServerAPI api)
-    // {
-    //     api.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(StartServerSide)} {ModID}");
-    // }
+        Init(api);
+    }
+
+    public override void StartServerSide(ICoreServerAPI api)
+    {
+        Mod.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(StartServerSide)} {ModID}");
+    }
 
     public override void StartClientSide(ICoreClientAPI api)
     {
-        api.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(StartClientSide)} {ModID}");
-        
-        Init(api);
+        Mod.Logger.Notification($"{nameof(BetterStorageInteractionsModSystem)}.{nameof(StartClientSide)} {ModID}");
     }
     
     public override void Dispose()
